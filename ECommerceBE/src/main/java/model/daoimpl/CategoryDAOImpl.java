@@ -8,13 +8,11 @@ import model.entity.Category;
 
 public class CategoryDAOImpl implements ICategoryDAO{
 
-
 	private Session sess;
 	public CategoryDAOImpl()
 	{
 		sess = HibernateUtil.getSessionFactory().openSession();
 	}
-	
 	public boolean insertCategory(Category c) {
 		boolean b = true;
 		try
@@ -28,10 +26,7 @@ public class CategoryDAOImpl implements ICategoryDAO{
 			b = false;
 			sess.getTransaction().rollback();
 			ex.printStackTrace();
-		}
-		
+		}	
 		return b;
 	}
-
-
 }
