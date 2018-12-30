@@ -10,6 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 
+import model.entity.Category;
 import model.entity.Product;
 
 
@@ -41,6 +42,7 @@ public class HibernateUtil {
 				
 				MetadataSources sources = new MetadataSources(registry);
 				sources.addAnnotatedClass(Product.class);
+				sources.addAnnotatedClass(Category.class);
 				
 				Metadata md = sources.getMetadataBuilder().build();
 				sf = md.getSessionFactoryBuilder().build();
